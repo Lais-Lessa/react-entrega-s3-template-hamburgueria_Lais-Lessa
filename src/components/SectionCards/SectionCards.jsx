@@ -3,7 +3,7 @@ import { StyledCardContainer } from "./StylesCard/StyledCardContainer";
 import { StyledCardList } from "./StylesCard/StyledCardList";
 import { StyledCardSection } from "./StylesCard/StyledCardSection";
 
-export const SectionCards = ({ products, onAddItem, filteredProducts }) => {
+ const SectionCards = ({ products, onAddItem, filteredProducts }) => {
   return (
     <StyledCardContainer>
       <StyledCardSection>
@@ -28,3 +28,4 @@ export const SectionCards = ({ products, onAddItem, filteredProducts }) => {
     </StyledCardContainer>
   );
 };
+export default SectionCards;

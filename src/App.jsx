@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header/Header";
 import { api } from "./services/Api";
-import { SectionCards } from "./components/SectionCards/sectionCards";
 import { Modal } from "./components/Modal/Modal";
 import { BackDrop } from "./components/Modal/BackDrop";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import SectionCards from "./components/SectionCards/sectionCards";
 
 function App({}) {
   const [products, setProducts] = useState([]);
