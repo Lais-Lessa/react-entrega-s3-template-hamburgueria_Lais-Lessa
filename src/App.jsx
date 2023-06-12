@@ -5,7 +5,9 @@ import { Modal } from "./components/Modal/Modal";
 import { BackDrop } from "./components/Modal/BackDrop";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-import SectionCards from "./components/SectionCards/sectionCards";
+import { searchForWorkspaceRoot } from "vite";
+import SectionCards from "./components/SectionCards/SectionCards";
+
 
 function App({}) {
   const [products, setProducts] = useState([]);
