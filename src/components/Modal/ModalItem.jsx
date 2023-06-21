@@ -5,9 +5,12 @@ import { StyledModalItem } from "./StyledModalItem";
 import { StyledDivModal } from "./StyledDivModal";
 
 export const ModalItem = ({ item, onDelete }) => {
+
   const handleOnDelete = () => {
     onDelete(item.id);
   };
+
+  
 
   return (
     <StyledModalItem>

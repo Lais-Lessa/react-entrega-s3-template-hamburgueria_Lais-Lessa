@@ -5,14 +5,15 @@ import { StyledHeaderModal } from "./StyledHeaderModal";
 import { StyledModalContent } from "./StyledModalContent";
 import { StyledModalList } from "./StyledModalList";
 
-export const Modal = ({ closeCart, itemsInCart, onDelete, setItemsInCart }) => {
+export const Modal = ({ closeCart, itemsInCart, onDelete, setItemsInCart, modalRef }) => {
+  
   const totalValue = itemsInCart.reduce(
     (totalValue, item) => totalValue + item.price * item.count,
     0
   );
 
   return (
-    <StyledContainerModal>
+    <StyledContainerModal ref={modalRef}>
       <StyledHeaderModal>
         <h2>Carrinho de compras</h2>
         <span onClick={closeCart}>X</span>

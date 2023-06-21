@@ -4,6 +4,7 @@ import { StyledCardList } from "./StylesCard/StyledCardList";
 import { StyledCardSection } from "./StylesCard/StyledCardSection";
 
  const SectionCards = ({ products, onAddItem, filteredProducts }) => {
+  
   return (
     <StyledCardContainer>
       <StyledCardSection>

@@ -5,8 +5,8 @@ import { Modal } from "./components/Modal/Modal";
 import { BackDrop } from "./components/Modal/BackDrop";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-import { searchForWorkspaceRoot } from "vite";
-import SectionCards from "./components/SectionCards/SectionCards";
+import SectionCards from "./components/SectionCards/sectionCards";
+import { useRef } from "react";
 
 
 function App({}) {
@@ -18,6 +18,8 @@ function App({}) {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  const modalRef = useRef(null)
+
   const openCart = () => {
     setOpenModal(true);
   };
@@ -25,6 +27,26 @@ function App({}) {
     setOpenModal(false);
   };
 
+  useEffect(() => {
+    function exitClick(e){
+      if(modalRef.current && !modalRef.current.contais(e.target)){
+        setOpenModal(false);
+      }
+    }
+
+  function exitEsc(e) {
+    if (e.key === "Escape") {
+      setOpenModal(false);
+    }
+  }
+
+  if (isOpenModal) {
+    document.addEventListener("mousedown", exitClick);
+    document.addEventListener("keydown", exitEsc);
+  }
+
+}, [isOpenModal]);
+  
   const onAddItem = (item) => {
     const isProduct = itemsInCart.find((product) => item.id === product.id);
     if (isProduct) {
@@ -96,6 +118,7 @@ function App({}) {
             itemsInCart={itemsInCart}
             onDelete={onDelete}
             setItemsInCart={setItemsInCart}
+            modalRef={modalRef}
           />{" "}
         </>
       )}

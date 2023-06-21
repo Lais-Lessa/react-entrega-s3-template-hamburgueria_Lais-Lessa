@@ -10,6 +10,7 @@ export const GlobalReset = createGlobalStyle`
 
 }
 
+
 button{
     cursor: pointer;
     background: transparent;
